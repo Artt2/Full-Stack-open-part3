@@ -26,24 +26,24 @@ const errorHandler = (error, request, response, next) => {
 }
 
 let persons = [
-  { 
+  {
     "id": 1,
-    "name": "Arto Hellas", 
+    "name": "Arto Hellas",
     "number": "040-123456"
   },
-  { 
+  {
     "id": 2,
-    "name": "Ada Lovelace", 
+    "name": "Ada Lovelace",
     "number": "39-44-5323523"
   },
-  { 
+  {
     "id": 3,
-    "name": "Dan Abramov", 
+    "name": "Dan Abramov",
     "number": "12-43-234345"
   },
-  { 
+  {
     "id": 4,
-    "name": "Mary Poppendieck", 
+    "name": "Mary Poppendieck",
     "number": "39-23-6423122"
   }
 ]
@@ -54,7 +54,7 @@ app.get("/api/persons", (request, response) => {
   })
 })
 
-app.get("/info", (request, persons) => {
+app.get("/info", (request, response, persons) => {
   response.send(`
     <p>Phonebook has info for ${persons.length} people</p>
     <p>${new Date()}</p>
@@ -76,15 +76,16 @@ app.get("/api/persons/:id", (request, response, next) => {
 
 app.delete("/api/persons/:id", (request, response, next) => {
   Person.findByIdAndRemove(request.params.id)
-    .then(result => {
+    .then(() => {
       response.status(204).end()
     })
-    .catch(error => next(error)) 
+    .catch(error => next(error))
 })
 
+/*
 const generateId = () => {
   return Math.floor(Math.random() * 100000)
-}
+} */
 
 app.post("/api/persons", (request, response, next) => {
   const body = request.body
