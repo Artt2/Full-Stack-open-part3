@@ -8,19 +8,19 @@ Link to online deployment: https://full-stack-open-part3-4b1f.onrender.com/api/p
 
 ## Technologies used
 
-- Programming Languages: Javascript
-- Online deployment: Render
-- Databases: Document-oriented database using MongoDB/Mongoose
-- Other: CSS
+- Programming Languages: **Javascript**
+- Online deployment: **Render**
+- Databases: Document-oriented database using **MongoDB/Mongoose**
+- Scripts: package.json configuration 
+- Other: **CSS**, **Postman** as an API platform
 
 ## Packages and Libraries
 
-- React
-- Node.js
-- Axios: HTTP client
-- Express: web app framework
-- Mongoose: databases for MongoDB
-- Dotenv: environment variables
+- **Node.js**
+- **Axios**: HTTP client
+- **Express**: web app framework
+- **Mongoose**: databases for MongoDB
+- **Dotenv**: environment variables
 
 ## Exercises and Projects
 
